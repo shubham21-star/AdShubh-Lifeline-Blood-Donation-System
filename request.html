@@ -1,0 +1,243 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ff2e4d" />
+    <title>Request Blood Now • BloodAI</title>
+    <meta name="description" content="Create a blood request with urgency mode. Get matched faster and contact compatible donors instantly." />
+
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='30%25' cy='30%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff'/%3E%3Cstop offset='60%25' stop-color='%23ff2e4d'/%3E%3Cstop offset='100%25' stop-color='%23c9152e'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M32 58s-20-13.6-20-30.5C12 16.7 19.6 9 29 9c4.2 0 7.8 1.6 10 4.2C41.2 10.6 44.8 9 49 9c9.4 0 17 7.7 17 18.5C66 44.4 46 58 46 58H32z'/%3E%3C/svg%3E" />
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+
+    <!-- Premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body data-page="request">
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand brand-badge" href="index.html" aria-label="BloodAI Home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>BloodAI</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.html">Become a Lifesaver</a></li>
+            <li class="nav-item"><a class="nav-link" href="request.html">Request Blood</a></li>
+            <li class="nav-item"><a class="nav-link" href="search.html">Find Donors Instantly</a></li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-premium btn-danger-premium" href="search.html">
+                <i class="fa-solid fa-magnifying-glass me-2"></i>Find Matches
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <header class="page-hero">
+      <div class="container">
+        <div class="row align-items-end gy-3">
+          <div class="col-lg-8">
+            <h1 class="fw-bold reveal">Request Blood Now</h1>
+            <p class="lead reveal mb-0">
+              Create a request in seconds. Use urgency mode to elevate emergencies and move straight to compatible donors.
+            </p>
+          </div>
+          <div class="col-lg-4 text-lg-end">
+            <span class="badge-soft badge-blood reveal">
+              <i class="fa-solid fa-triangle-exclamation me-2"></i>
+              Priority: <span id="urgencyBadge" class="ms-1">Normal</span>
+            </span>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <main class="section pt-0">
+      <div class="container">
+        <!-- Emergency banner -->
+        <div class="glass p-4 p-md-5 mb-4 reveal">
+          <div class="row align-items-center gy-3">
+            <div class="col-lg-8">
+              <div class="d-flex align-items-center gap-3">
+                <div class="icon"><i class="fa-solid fa-siren-on"></i></div>
+                <div>
+                  <div class="fw-bold fs-5">Emergency playbook</div>
+                  <div class="text-muted-2">
+                    Submit your request, then open matching to contact compatible donors immediately.
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4 text-lg-end">
+              <a class="btn btn-premium btn-ghost-premium" href="search.html">
+                <i class="fa-solid fa-arrow-right me-2"></i>Go to Search
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="row justify-content-center">
+          <div class="col-lg-8 col-xl-7">
+            <div class="glass p-4 p-md-5 reveal">
+              <div class="d-flex align-items-center justify-content-between gap-3 mb-3">
+                <div>
+                  <div class="fw-bold fs-4">Request Details</div>
+                  <div class="text-muted-2">Clean fields, zero clutter—built for high-pressure moments.</div>
+                </div>
+                <span class="badge-soft"><i class="fa-solid fa-heart-pulse me-2"></i>Priority flow</span>
+              </div>
+
+              <form id="requestForm" novalidate>
+                <div class="row g-3">
+                  <div class="col-12">
+                    <label class="form-label fw-semibold" for="patientName">Patient / Case Name</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa-solid fa-user-injured"></i></span>
+                      <input id="patientName" type="text" class="form-control" placeholder="e.g., Emergency Case – ICU" required minlength="2" />
+                      <div class="invalid-feedback">Please enter a valid patient name.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="requestBlood">Required Blood Group</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa-solid fa-droplet"></i></span>
+                      <select id="requestBlood" class="form-select" required>
+                        <option value="" selected disabled>Select group</option>
+                        <option>A+</option><option>A-</option>
+                        <option>B+</option><option>B-</option>
+                        <option>AB+</option><option>AB-</option>
+                        <option>O+</option><option>O-</option>
+                      </select>
+                      <div class="invalid-feedback">Please select a blood group.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="requestUrgency">Urgency</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa-solid fa-bolt"></i></span>
+                      <select id="requestUrgency" class="form-select" required>
+                        <option value="Normal" selected>Normal</option>
+                        <option value="Urgent">Urgent</option>
+                      </select>
+                    </div>
+                    <div class="text-muted-2 small mt-2">
+                      <i class="fa-solid fa-fire me-1 text-danger"></i>Urgent boosts visibility and nudges faster outreach.
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="requestLocation">Hospital / Location</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa-solid fa-location-dot"></i></span>
+                      <input id="requestLocation" type="text" class="form-control" placeholder="e.g., Fortis, Delhi" required minlength="2" />
+                      <div class="invalid-feedback">Please enter a valid location.</div>
+                    </div>
+                  </div>
+
+                  <div class="col-md-6">
+                    <label class="form-label fw-semibold" for="requestPhone">Coordinator Phone</label>
+                    <div class="input-group">
+                      <span class="input-group-text"><i class="fa-solid fa-phone"></i></span>
+                      <input id="requestPhone" type="tel" class="form-control" placeholder="e.g., +91 98765 43210" required pattern="^[0-9+][0-9\\s-]{7,}$" />
+                      <div class="invalid-feedback">Please enter a valid phone number.</div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="d-flex flex-column flex-sm-row gap-2 mt-4">
+                  <button class="btn btn-premium btn-danger-premium flex-fill" type="submit">
+                    <i class="fa-solid fa-paper-plane me-2"></i>Send Request
+                  </button>
+                  <a class="btn btn-premium btn-ghost-premium flex-fill" href="search.html">
+                    <i class="fa-solid fa-magnifying-glass me-2"></i>Find Matches Instantly
+                  </a>
+                </div>
+              </form>
+
+              <!-- Appears after submit -->
+              <div id="requestCta" class="d-none mt-4">
+                <div class="glass p-4">
+                  <div class="d-flex align-items-start gap-3">
+                    <div class="icon"><i class="fa-solid fa-arrow-right"></i></div>
+                    <div>
+                      <div class="fw-bold">Next: contact compatible donors</div>
+                      <div class="text-muted-2">Open matching and filter by blood group + location for the fastest outreach.</div>
+                      <div class="mt-3">
+                        <a class="btn btn-premium btn-danger-premium" href="search.html">
+                          <i class="fa-solid fa-magnifying-glass me-2"></i>Open Matching
+                        </a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <footer class="py-5">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-lg-6">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="brand-dot" aria-hidden="true"></span>
+              <span class="fw-bold fs-5">BloodAI</span>
+            </div>
+            <p class="text-muted-2 mb-0">Premium request flow with urgency highlighting and smooth interactions.</p>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="fw-bold mb-2">Get started</div>
+            <div class="d-flex flex-column gap-2">
+              <a class="footer-link" href="index.html">Home</a>
+              <a class="footer-link" href="register.html">Become a lifesaver</a>
+              <a class="footer-link" href="search.html">Find donors instantly</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-3">
+            <div class="fw-bold mb-2">Add donors</div>
+            <a class="btn btn-premium btn-ghost-premium" href="register.html">
+              <i class="fa-solid fa-user-plus me-2"></i>Activate donor profile
+            </a>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mt-4 pt-4 border-top border-light border-opacity-10">
+          <div class="text-muted-2 small">© <span id="year"></span> BloodAI. Designed for urgent care coordination.</div>
+          <div class="text-muted-2 small">Emergency-first UX • Clear urgency signals • Instant outreach</div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 2000">
+      <div id="toastHost" class="d-flex flex-column gap-2"></div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
