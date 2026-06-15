@@ -1,0 +1,478 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#ff2e4d" />
+    <title>BloodAI – AI-Powered Blood Donation Network</title>
+    <meta name="description" content="BloodAI is a human-first, AI-powered blood donation network—match compatible donors fast, coordinate urgent requests, and act with confidence." />
+
+    <!-- Favicon (inline SVG) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='64' height='64' viewBox='0 0 64 64'%3E%3Cdefs%3E%3CradialGradient id='g' cx='30%25' cy='30%25'%3E%3Cstop offset='0%25' stop-color='%23ffffff'/%3E%3Cstop offset='60%25' stop-color='%23ff2e4d'/%3E%3Cstop offset='100%25' stop-color='%23c9152e'/%3E%3C/radialGradient%3E%3C/defs%3E%3Cpath fill='url(%23g)' d='M32 58s-20-13.6-20-30.5C12 16.7 19.6 9 29 9c4.2 0 7.8 1.6 10 4.2C41.2 10.6 44.8 9 49 9c9.4 0 17 7.7 17 18.5C66 44.4 46 58 46 58H32z'/%3E%3C/svg%3E" />
+
+    <!-- Bootstrap 5 CDN -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+
+    <!-- Font Awesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet" />
+
+    <!-- Premium typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="style.css" />
+  </head>
+
+  <body data-page="home">
+    <!-- Sticky Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+      <div class="container">
+        <a class="navbar-brand brand-badge" href="index.html" aria-label="BloodAI Home">
+          <span class="brand-dot" aria-hidden="true"></span>
+          <span>BloodAI</span>
+        </a>
+
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav ms-auto align-items-lg-center gap-lg-2 mt-3 mt-lg-0">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="register.html">Become a Lifesaver</a></li>
+            <li class="nav-item"><a class="nav-link" href="request.html">Request Blood</a></li>
+            <li class="nav-item"><a class="nav-link" href="search.html">Find Donors Instantly</a></li>
+            <li class="nav-item ms-lg-2">
+              <a class="btn btn-premium btn-danger-premium" href="request.html">
+                <i class="fa-solid fa-heart-pulse me-2"></i>Launch Emergency Mode
+              </a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Hero -->
+    <header class="hero" id="top">
+      <div class="hero-bg" role="img" aria-label="Blood donation background"></div>
+      <div class="hero-overlay" aria-hidden="true"></div>
+
+      <div class="container">
+        <div class="row align-items-center gy-5">
+          <div class="col-lg-7">
+            <div class="hero-kicker reveal">
+              <i class="fa-solid fa-wand-magic-sparkles"></i>
+              <span class="small fw-semibold">Precision matching • Emergency-ready • Built for real-world urgency</span>
+            </div>
+
+            <h1 class="mt-3 reveal">
+              Turn seconds into <span class="text-gradient">saved lives</span>
+            </h1>
+            <p class="hero-subtitle mt-3 reveal">
+              BloodAI is a premium, AI-powered coordination layer for blood donation—matching compatible donors fast, guiding next steps, and helping teams act calmly under pressure.
+            </p>
+
+            <div class="d-flex flex-wrap gap-3 mt-4 reveal">
+              <a class="btn btn-premium btn-danger-premium" href="register.html">
+                <i class="fa-solid fa-user-plus me-2"></i>Become a Lifesaver
+              </a>
+              <a class="btn btn-premium btn-ghost-premium" href="search.html">
+                <i class="fa-solid fa-magnifying-glass me-2"></i>Find Compatible Donors
+              </a>
+            </div>
+
+            <div class="hero-badges reveal">
+              <span class="mini-pill"><i class="fa-solid fa-shield-heart"></i><span class="small fw-semibold">Privacy-first by design</span></span>
+              <span class="mini-pill"><i class="fa-solid fa-location-crosshairs"></i><span class="small fw-semibold">Location-aware matching</span></span>
+              <span class="mini-pill"><i class="fa-solid fa-bolt"></i><span class="small fw-semibold">One-tap emergency flow</span></span>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <!-- Premium stats card cluster -->
+            <div class="glass p-4 p-md-5 reveal floaty">
+              <div class="d-flex align-items-center justify-content-between">
+                <div>
+                  <div class="fw-bold fs-4">Live Impact</div>
+                  <div class="text-muted-2">A real-time style view of outcomes</div>
+                </div>
+                <span class="badge-soft badge-blood"><i class="fa-solid fa-droplet me-2"></i>BloodAI</span>
+              </div>
+
+              <div class="row g-3 mt-2">
+                <div class="col-12">
+                  <div class="glass stat">
+                    <div class="icon"><i class="fa-solid fa-hand-holding-droplet"></i></div>
+                    <div>
+                      <div class="num" data-count="12480" data-suffix="+">0</div>
+                      <div class="label">Lifesavers verified</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="glass stat">
+                    <div class="icon"><i class="fa-solid fa-heart-pulse"></i></div>
+                    <div>
+                      <div class="num" data-count="3" data-suffix=" min">0</div>
+                      <div class="label">Median time to first match</div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-12">
+                  <div class="glass stat">
+                    <div class="icon"><i class="fa-solid fa-location-dot"></i></div>
+                    <div>
+                      <div class="num" data-count="120" data-suffix="+">0</div>
+                      <div class="label">Communities connected</div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-4">
+                <a class="btn btn-premium btn-ghost-premium w-100" href="#features">
+                  <i class="fa-solid fa-arrow-down me-2"></i>See how it works
+                </a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- Trust strip -->
+    <section class="trust-strip">
+      <div class="container">
+        <div class="d-flex flex-column flex-lg-row align-items-lg-center justify-content-between gap-3">
+          <div class="text-muted-2 small fw-semibold reveal">
+            Built for hospitals, NGOs, and community responders—when accuracy and speed matter most
+          </div>
+          <div class="d-flex flex-wrap gap-2 justify-content-lg-end">
+            <div class="logo-chip reveal"><i class="fa-solid fa-hospital"></i><span>CityCare Hospitals</span></div>
+            <div class="logo-chip reveal"><i class="fa-solid fa-building-shield"></i><span>ReliefOps Network</span></div>
+            <div class="logo-chip reveal"><i class="fa-solid fa-truck-medical"></i><span>Emergency Dispatch</span></div>
+            <div class="logo-chip reveal"><i class="fa-solid fa-shield-heart"></i><span>Donor Alliance</span></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Features -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="row align-items-end gy-3 mb-4">
+          <div class="col-lg-7">
+            <h2 class="fw-bold reveal">Designed for urgency. Built with intelligence.</h2>
+            <p class="text-muted-2 reveal mb-0">
+              Every screen is optimized to reduce hesitation—so coordinators can act quickly and donors can respond confidently.
+            </p>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <a class="btn btn-premium btn-danger-premium reveal" href="request.html">
+              <i class="fa-solid fa-triangle-exclamation me-2"></i>Create an Urgent Request
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-md-6 col-lg-4">
+            <div class="glass card-premium p-4 h-100 reveal">
+              <div class="icon mb-3"><i class="fa-solid fa-brain"></i></div>
+              <h5 class="fw-bold mb-2">AI-Grade Compatibility</h5>
+              <p class="text-muted-2 mb-0">
+                Smart ranking focuses on blood group + proximity—so the right donors surface first when time is critical.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass card-premium p-4 h-100 reveal">
+              <div class="icon mb-3"><i class="fa-solid fa-siren-on"></i></div>
+              <h5 class="fw-bold mb-2">Emergency-First Workflow</h5>
+              <p class="text-muted-2 mb-0">
+                Urgency mode elevates visibility and keeps a direct path to calling donors—no extra clicks, no confusion.
+              </p>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4">
+            <div class="glass card-premium p-4 h-100 reveal">
+              <div class="icon mb-3"><i class="fa-solid fa-location-crosshairs"></i></div>
+              <h5 class="fw-bold mb-2">Live-Ready Coordination</h5>
+              <p class="text-muted-2 mb-0">
+                A product-grade foundation for live availability, on-call rosters, and geo-distance scoring in future releases.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Testimonials -->
+    <section class="section pt-0">
+      <div class="container">
+        <div class="glass p-4 p-md-5 reveal">
+          <div class="row align-items-center gy-4">
+            <div class="col-lg-5">
+              <h3 class="fw-bold mb-2">Trusted when it matters most</h3>
+              <p class="text-muted-2 mb-0">
+                Human-centered design with a calm, modern interface—so people can move fast without feeling rushed.
+              </p>
+            </div>
+            <div class="col-lg-7">
+              <div class="row g-3">
+                <div class="col-md-6">
+                  <div class="glass p-4 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="avatar"><i class="fa-solid fa-user-doctor"></i></div>
+                      <div>
+                        <div class="fw-bold">Dr. R. Sharma</div>
+                        <div class="text-muted-2 small">Emergency Medicine</div>
+                      </div>
+                    </div>
+                    <p class="text-muted-2 mt-3 mb-0">
+                      “The interface is calm and decisive. It gets our team from request to contact in minutes.”
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="glass p-4 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="avatar"><i class="fa-solid fa-hand-holding-heart"></i></div>
+                      <div>
+                        <div class="fw-bold">Community Lead</div>
+                        <div class="text-muted-2 small">NGO Operations</div>
+                      </div>
+                    </div>
+                    <p class="text-muted-2 mt-3 mb-0">
+                      “People understand it instantly. That clarity helps more donors respond, faster.”
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="glass p-4 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="avatar"><i class="fa-solid fa-droplet"></i></div>
+                      <div>
+                        <div class="fw-bold">Verified Donor</div>
+                        <div class="text-muted-2 small">A+ • Mumbai</div>
+                      </div>
+                    </div>
+                    <p class="text-muted-2 mt-3 mb-0">
+                      “I registered in seconds—and I’m reachable immediately when someone needs help.”
+                    </p>
+                  </div>
+                </div>
+                <div class="col-md-6">
+                  <div class="glass p-4 h-100">
+                    <div class="d-flex align-items-center gap-3">
+                      <div class="avatar"><i class="fa-solid fa-shield-heart"></i></div>
+                      <div>
+                        <div class="fw-bold">Hospital Coordinator</div>
+                        <div class="text-muted-2 small">Care Operations</div>
+                      </div>
+                    </div>
+                    <p class="text-muted-2 mt-3 mb-0">
+                      “Urgent requests are unmistakable. That focus prevents delays in high-pressure situations.”
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FAQ + CTA -->
+    <section class="section pt-0" id="faq">
+      <div class="container">
+        <div class="row align-items-end gy-3 mb-4">
+          <div class="col-lg-7">
+            <div class="kicker reveal"><i class="fa-solid fa-circle-question"></i><span class="small fw-semibold">Frequently asked questions</span></div>
+            <h2 class="fw-bold mt-3 reveal">Clear answers. Faster decisions.</h2>
+            <p class="text-muted-2 reveal mb-0">Concise guidance for donors, coordinators, and emergency responders.</p>
+          </div>
+          <div class="col-lg-5 text-lg-end">
+            <a class="btn btn-premium btn-ghost-premium reveal" href="search.html">
+              <i class="fa-solid fa-magnifying-glass me-2"></i>Find matches now
+            </a>
+          </div>
+        </div>
+
+        <div class="row g-4">
+          <div class="col-lg-7">
+            <div class="accordion accordion-premium" id="faqAccordion">
+              <div class="accordion-item mb-3 reveal">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq1" aria-expanded="false" aria-controls="faq1">
+                    What makes BloodAI feel “AI-powered” in this demo?
+                  </button>
+                </h2>
+                <div id="faq1" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    It prioritizes <strong>compatibility</strong> (blood group) and <strong>proximity</strong> (location) to surface high-confidence matches quickly. The product UI is designed for upgrades like availability, smart ranking, and geo-distance scoring.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 reveal">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2" aria-expanded="false" aria-controls="faq2">
+                    Where is donor data stored in this version?
+                  </button>
+                </h2>
+                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    This is a frontend-only demo: donor registrations are saved in <strong>your browser</strong> using local storage, so Search feels instant with no backend.
+                  </div>
+                </div>
+              </div>
+
+              <div class="accordion-item mb-3 reveal">
+                <h2 class="accordion-header">
+                  <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3" aria-expanded="false" aria-controls="faq3">
+                    What’s the fastest emergency playbook?
+                  </button>
+                </h2>
+                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+                  <div class="accordion-body">
+                    Go to <strong>Request Blood</strong> → set urgency to <strong>Urgent</strong> → submit → open <strong>Find Donors</strong> → filter matches → contact donors directly from cards.
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="col-lg-5">
+            <div class="glass p-4 p-md-5 reveal cta-band">
+              <div class="d-flex align-items-center justify-content-between gap-3">
+                <div>
+                  <div class="fw-bold fs-4">Ready to help—right now?</div>
+                  <div class="text-muted-2">Become a donor or launch an urgent request in under a minute.</div>
+                </div>
+                <span class="badge-soft badge-blood"><i class="fa-solid fa-bolt me-2"></i>Fast</span>
+              </div>
+              <div class="divider my-4"></div>
+              <div class="d-flex flex-column gap-2">
+                <a class="btn btn-premium btn-danger-premium" href="register.html">
+                  <i class="fa-solid fa-user-plus me-2"></i>Become a Lifesaver
+                </a>
+                <a class="btn btn-premium btn-ghost-premium" href="request.html">
+                  <i class="fa-solid fa-heart-pulse me-2"></i>Request Blood Now
+                </a>
+                <a class="btn btn-premium btn-ghost-premium" href="search.html">
+                  <i class="fa-solid fa-magnifying-glass me-2"></i>Find Compatible Donors
+                </a>
+              </div>
+              <div class="text-muted-2 small mt-3">
+                <i class="fa-solid fa-shield-heart me-1"></i>Human-first UX • Emergency-ready • Built like a startup
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-5">
+      <div class="container">
+        <div class="row gy-4 align-items-start">
+          <div class="col-lg-5">
+            <div class="d-flex align-items-center gap-2 mb-2">
+              <span class="brand-dot" aria-hidden="true"></span>
+              <span class="fw-bold fs-5">BloodAI</span>
+            </div>
+            <p class="text-muted-2 mb-3">
+              A human-first AI coordination layer for blood donation—helping communities respond faster, with clarity and confidence.
+            </p>
+            <div class="d-flex gap-2">
+              <a class="btn btn-premium btn-ghost-premium" href="search.html" aria-label="Search donors">
+                <i class="fa-solid fa-magnifying-glass"></i>
+              </a>
+              <a class="btn btn-premium btn-ghost-premium" href="register.html" aria-label="Register donor">
+                <i class="fa-solid fa-user-plus"></i>
+              </a>
+              <a class="btn btn-premium btn-ghost-premium" href="request.html" aria-label="Request blood">
+                <i class="fa-solid fa-heart-pulse"></i>
+              </a>
+            </div>
+          </div>
+
+          <div class="col-6 col-lg-3">
+            <div class="fw-bold mb-2">Platform</div>
+            <div class="d-flex flex-column gap-2">
+              <a class="footer-link" href="#features">Features</a>
+              <a class="footer-link" href="search.html">Find donors</a>
+              <a class="footer-link" href="request.html">Emergency mode</a>
+            </div>
+          </div>
+          <div class="col-6 col-lg-2">
+            <div class="fw-bold mb-2">Get started</div>
+            <div class="d-flex flex-column gap-2">
+              <a class="footer-link" href="index.html">Home</a>
+              <a class="footer-link" href="register.html">Become a lifesaver</a>
+              <a class="footer-link" href="request.html">Request blood</a>
+              <a class="footer-link" href="search.html">Find donors instantly</a>
+            </div>
+          </div>
+
+          <div class="col-lg-2">
+            <div class="fw-bold mb-2">Support</div>
+            <div class="d-flex flex-column gap-2">
+              <a class="footer-link" href="#top">Back to top</a>
+              <span class="text-muted-2 small">Built with Bootstrap 5</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="d-flex flex-column flex-md-row justify-content-between align-items-md-center gap-2 mt-4 pt-4 border-top border-light border-opacity-10">
+          <div class="text-muted-2 small">© <span id="year"></span> BloodAI. Built to move faster when life depends on it.</div>
+          <div class="text-muted-2 small">AI-first coordination • Premium UX • Emergency-ready flow</div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Floating AI Chatbot -->
+    <div class="chatbot">
+      <div id="chatPanel" class="chatbot-panel glass">
+        <div class="chatbot-header">
+          <div class="d-flex align-items-center gap-2">
+            <span class="badge-soft badge-blood"><i class="fa-solid fa-brain me-2"></i>AI</span>
+            <div class="title">BloodAI Assistant</div>
+          </div>
+          <button id="chatClose" class="btn btn-sm btn-premium btn-ghost-premium" type="button" aria-label="Close chatbot">
+            <i class="fa-solid fa-xmark"></i>
+          </button>
+        </div>
+        <div class="chatbot-body">
+          <div id="chatMessages" class="chatbot-messages" aria-live="polite"></div>
+        </div>
+        <div class="chatbot-input">
+          <input id="chatInput" type="text" placeholder="Ask: urgent request, compatible donors, next steps..." aria-label="Chat input" />
+          <button id="chatSend" class="btn btn-premium btn-danger-premium" type="button" aria-label="Send message">
+            <i class="fa-solid fa-paper-plane"></i>
+          </button>
+        </div>
+      </div>
+
+      <button id="chatToggle" class="chatbot-toggle" type="button" aria-label="Open BloodAI chatbot">
+        <i class="fa-solid fa-comment-dots"></i>
+      </button>
+    </div>
+
+    <!-- Toasts -->
+    <div class="position-fixed top-0 end-0 p-3" style="z-index: 2000">
+      <div id="toastHost" class="d-flex flex-column gap-2"></div>
+    </div>
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      // Small inline detail: current year in footer (keeps template evergreen).
+      document.getElementById("year").textContent = new Date().getFullYear();
+    </script>
+    <script src="script.js"></script>
+  </body>
+</html>
+
